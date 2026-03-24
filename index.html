@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Parroquia Santa Cruz</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-surface": "#0c0f0f",
+            "primary-container": "#e2e2e2",
+            "surface-dim": "#d3dbdd",
+            "on-secondary": "#fff8ec",
+            "on-error": "#fff7f7",
+            "on-tertiary-container": "#000000",
+            "primary": "#5e5e5e",
+            "on-tertiary-fixed": "#ffffff",
+            "surface-bright": "#f9f9f9",
+            "secondary-fixed-dim": "#f9d200",
+            "on-secondary-fixed-variant": "#6c5a00",
+            "tertiary-dim": "#aa0011",
+            "secondary-fixed": "#ffe16d",
+            "surface-container-low": "#f2f4f4",
+            "on-primary-container": "#525252",
+            "on-secondary-container": "#615100",
+            "surface-container": "#ebeeef",
+            "background": "#f9f9f9",
+            "secondary": "#705e00",
+            "on-tertiary": "#fff7f6",
+            "inverse-on-surface": "#9c9d9d",
+            "on-background": "#2d3435",
+            "on-primary-fixed": "#3f3f3f",
+            "on-error-container": "#782232",
+            "primary-fixed-dim": "#d4d4d4",
+            "surface-container-high": "#e4e9ea",
+            "on-primary-fixed-variant": "#5b5b5b",
+            "surface-variant": "#dde4e5",
+            "on-primary": "#f8f8f8",
+            "outline-variant": "#acb3b4",
+            "error": "#9e3f4e",
+            "on-secondary-fixed": "#4c3e00",
+            "surface-container-highest": "#dde4e5",
+            "inverse-primary": "#ffffff",
+            "error-dim": "#4f0116",
+            "tertiary-fixed": "#f72d2f",
+            "secondary-dim": "#635200",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#c10015",
+            "surface": "#f9f9f9",
+            "error-container": "#ff8b9a",
+            "on-surface-variant": "#596061",
+            "on-surface": "#2d3435",
+            "tertiary-fixed-dim": "#e51d24",
+            "surface-tint": "#5e5e5e",
+            "primary-fixed": "#e2e2e2",
+            "primary-dim": "#525252",
+            "tertiary-container": "#f72d2f",
+            "on-tertiary-fixed-variant": "#fffbff",
+            "secondary-container": "#ffe16d",
+            "outline": "#757c7d"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Manrope"],
+            "label": ["Epilogue"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .glass-header { backdrop-filter: blur(20px); }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #f9f9f9;
+      color: #2d3435;
+    }
+    h1, h2, h3, h4 { font-family: 'Epilogue', sans-serif; }
+
+    /* Mobile menu */
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 2rem 1.25rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+    }
+    #mobile-menu.open { display: flex; }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Card hover lift */
+    .group-card {
+      transition: box-shadow 0.22s, transform 0.22s;
+    }
+    .group-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 48px rgba(45,52,53,0.10);
+    }
+
+    /* Nav active underline */
+    .nav-link-active {
+      border-bottom: 2px solid #f9d200;
+      padding-bottom: 2px;
+    }
+  </style>
+</head>
+
+<body class="bg-surface selection:bg-secondary-fixed selection:text-on-secondary-container">
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════ -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(45,52,53,0.04)]">
+  <div class="flex justify-between items-center px-6 md:px-8 py-4 max-w-7xl mx-auto">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <img src="files/Frame 48.png" alt="Logo Parroquia Santa Cruz" class="h-10 w-auto"/>
+      <span class="text-xl font-black text-zinc-800 uppercase tracking-tighter font-headline">Santa Cruz</span>
+    </div>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex gap-8 items-center">
+      <a href="#grupos" class="text-zinc-900 font-bold nav-link-active font-body text-sm transition-colors">Grupos</a>
+      <a href="#horarios" class="text-zinc-500 hover:text-zinc-800 transition-colors font-body text-sm font-medium">Horarios</a>
+      <a href="#canales" class="text-zinc-500 hover:text-zinc-800 transition-colors font-body text-sm font-medium">Seguinos</a>
+      <a href="#contacto" class="text-zinc-500 hover:text-zinc-800 transition-colors font-body text-sm font-medium">Contacto</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="hamburger" class="md:hidden p-2 rounded-lg hover:bg-zinc-100 transition-colors" aria-label="Abrir menú">
+      <span class="material-symbols-outlined text-zinc-700" id="hamburger-icon">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu">
+    <a href="#grupos"   class="text-zinc-800 font-bold py-2 text-sm border-b border-zinc-100">Grupos</a>
+    <a href="#horarios" class="text-zinc-600 py-2 text-sm border-b border-zinc-100">Horarios</a>
+    <a href="#canales"  class="text-zinc-600 py-2 text-sm border-b border-zinc-100">Seguinos</a>
+    <a href="#contacto" class="text-zinc-600 py-2 text-sm">Contacto</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════════ -->
+<main class="pt-24 pb-20">
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-6 md:px-8 py-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+    <div class="md:col-span-8">
+      <span class="inline-block bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">Parroquia · Santa Cruz</span>
+      <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-on-background leading-[0.9] mb-8">
+        COMUNIDAD <br/> DE FE.
+      </h1>
+      <p class="text-xl text-on-surface-variant max-w-xl font-medium leading-relaxed mb-10">
+        Un espacio sagrado para el crecimiento espiritual, la formación y el encuentro fraterno en el corazón de nuestra parroquia.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#grupos" class="bg-secondary text-on-secondary px-7 py-3.5 rounded-lg font-bold hover:opacity-90 transition-all shadow-sm flex items-center gap-2">
+          Ver grupos <span class="material-symbols-outlined text-lg">arrow_downward</span>
+        </a>
+        <a href="#horarios" class="bg-surface-container text-on-surface px-7 py-3.5 rounded-lg font-bold hover:bg-surface-container-high transition-all flex items-center gap-2">
+          Horarios de misa
+        </a>
+      </div>
+    </div>
+    <div class="md:col-span-4 flex flex-col items-end">
+      <div class="w-full aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden shadow-sm">
+        <img
+          alt="Interior de la Parroquia Santa Cruz"
+          class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          src="https://images.unsplash.com/photo-1548625361-58a9d53a9a63?w=600&q=80"
+          onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuC9RMU6zCXXzCLfPqR6gLeQfn2yHQ1eLTUInX8ceVFHBa5n_KylHsTGgGm_42Ofe0QzZKWucyHHqJZR67nXpdqDTqQVqvXgMNACycz3GgoZzhPpN8J-Q0fzHCoONYDEhZKPIbGApvZd1RCen_oldFX_fmQcra_XkYA5vSRR-7ODR2JEB24p-emWUKuXmgTlJA1ZyZg21lI4TuAHYsE_-taMvqYid1DOIkX2jFo1s43VTSsr2uPHTr7FyZwUbWQ_iL8qw81BXmr17ltV'"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GRUPOS SECTION ═══ -->
+  <section id="grupos" class="max-w-7xl mx-auto px-6 md:px-8 py-20">
+    <div class="flex flex-col md:flex-row md:items-end gap-4 mb-12">
+      <div>
+        <span class="text-secondary font-bold tracking-widest text-xs uppercase mb-2 block">Participación Activa</span>
+        <h2 class="text-4xl font-bold tracking-tight">Nuestros Grupos</h2>
+      </div>
+      <div class="hidden md:block h-px flex-1 bg-surface-variant mb-2 ml-8"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- ── Catequesis ── -->
+      <div class="group-card relative flex flex-col bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_32px_rgba(45,52,53,0.04)] border border-outline-variant/10">
+        <div class="mb-8">
+          <span class="material-symbols-outlined text-4xl text-primary mb-4 block">menu_book</span>
+          <h3 class="text-2xl font-bold mb-2">Catequesis</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Formación inicial en la fe para niños y jóvenes que desean recibir los sacramentos.</p>
+        </div>
+        <div class="mt-auto space-y-4">
+          <div class="flex justify-between items-center py-3 border-b border-surface-container">
+            <span class="text-xs font-bold uppercase tracking-wider text-outline">Sábados</span>
+            <span class="text-sm font-semibold">10:00 – 12:00 hs</span>
+          </div>
+          <a href="https://forms.gle/REEMPLAZAR-CATEQUESIS" target="_blank" class="w-full py-4 bg-secondary-container text-on-secondary-container font-bold rounded-lg hover:bg-secondary-fixed-dim transition-colors flex justify-center items-center gap-2">
+            Inscribirme <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Confirmación ── -->
+      <div class="group-card relative flex flex-col bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_32px_rgba(45,52,53,0.04)] border border-outline-variant/10">
+        <div class="mb-8">
+          <span class="material-symbols-outlined text-4xl text-primary mb-4 block">auto_awesome</span>
+          <h3 class="text-2xl font-bold mb-2">Confirmación</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Crecimiento y compromiso en el Espíritu Santo para adolescentes y adultos.</p>
+        </div>
+        <div class="mt-auto space-y-4">
+          <div class="flex justify-between items-center py-3 border-b border-surface-container">
+            <span class="text-xs font-bold uppercase tracking-wider text-outline">Viernes</span>
+            <span class="text-sm font-semibold">19:00 – 20:30 hs</span>
+          </div>
+          <a href="https://forms.gle/REEMPLAZAR-CONFIRMACION" target="_blank" class="w-full py-4 bg-secondary text-on-secondary font-bold rounded-lg hover:opacity-90 transition-colors flex justify-center items-center gap-2">
+            Ver Requisitos <span class="material-symbols-outlined text-lg">open_in_new</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Grupo Joven ── -->
+      <div class="group-card relative flex flex-col bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_32px_rgba(45,52,53,0.04)] border border-outline-variant/10">
+        <div class="mb-8">
+          <span class="material-symbols-outlined text-4xl text-primary mb-4 block">groups</span>
+          <h3 class="text-2xl font-bold mb-2">Grupo Joven</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Encuentro, misión y amistad para jóvenes mayores de 16 años.</p>
+        </div>
+        <div class="mt-auto space-y-4">
+          <div class="flex justify-between items-center py-3 border-b border-surface-container">
+            <span class="text-xs font-bold uppercase tracking-wider text-outline">Sábados</span>
+            <span class="text-sm font-semibold">17:00 – 19:30 hs</span>
+          </div>
+          <div class="flex items-center gap-2 text-tertiary-dim text-xs font-bold animate-pulse">
+            <span class="material-symbols-outlined text-base">priority_high</span> CUPOS LIMITADOS
+          </div>
+          <a href="https://forms.gle/REEMPLAZAR-GRUPOJOVEN" target="_blank" class="w-full py-4 bg-primary text-on-primary font-bold rounded-lg hover:opacity-90 transition-colors flex justify-center items-center gap-2">
+            Sumarme al Grupo
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Apoyo Escolar ── -->
+      <div class="group-card relative flex flex-col bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_32px_rgba(45,52,53,0.04)] border border-outline-variant/10">
+        <div class="mb-8">
+          <span class="material-symbols-outlined text-4xl text-tertiary mb-4 block">school</span>
+          <h3 class="text-2xl font-bold mb-2">Apoyo Escolar</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Acompañamiento pedagógico para niños del barrio en sus tareas escolares.</p>
+        </div>
+        <div class="mt-auto space-y-4">
+          <div class="flex justify-between items-center py-3 border-b border-surface-container">
+            <span class="text-xs font-bold uppercase tracking-wider text-outline">Martes</span>
+            <span class="text-sm font-semibold">17:30 – 19:00 hs</span>
+          </div>
+          <a href="https://forms.gle/REEMPLAZAR-APOYOESCOLAR" target="_blank" class="w-full py-4 bg-tertiary text-on-tertiary font-bold rounded-lg hover:opacity-90 transition-all flex justify-center items-center gap-2">
+            Inscribir Alumno <span class="material-symbols-outlined text-lg">edit</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Cáritas ── -->
+      <div class="group-card relative flex flex-col bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_32px_rgba(45,52,53,0.04)] border border-outline-variant/10">
+        <div class="mb-8">
+          <span class="material-symbols-outlined text-4xl mb-4 block" style="color:#2e7d32">volunteer_activism</span>
+          <h3 class="text-2xl font-bold mb-2">Cáritas</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Servicio de asistencia y promoción humana para las familias más necesitadas.</p>
+        </div>
+        <div class="mt-auto space-y-4">
+          <div class="flex justify-between items-center py-3 border-b border-surface-container">
+            <span class="text-xs font-bold uppercase tracking-wider text-outline">Miércoles</span>
+            <span class="text-sm font-semibold">16:00 – 18:30 hs</span>
+          </div>
+          <a href="https://forms.gle/REEMPLAZAR-CARITAS" target="_blank" class="w-full py-4 font-bold rounded-lg hover:opacity-90 transition-all flex justify-center items-center gap-2 text-white" style="background:#2e7d32">
+            Quiero Ayudar <span class="material-symbols-outlined text-lg">favorite</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Coro Parroquial ── -->
+      <div class="group-card relative flex flex-col bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_32px_rgba(45,52,53,0.04)] border border-outline-variant/10">
+        <div class="mb-8">
+          <span class="material-symbols-outlined text-4xl text-secondary mb-4 block">music_note</span>
+          <h3 class="text-2xl font-bold mb-2">Coro Parroquial</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Alabanza a través del canto. Abierto a todas las voces con ganas de participar.</p>
+        </div>
+        <div class="mt-auto space-y-4">
+          <div class="flex justify-between items-center py-3 border-b border-surface-container">
+            <span class="text-xs font-bold uppercase tracking-wider text-outline">Jueves</span>
+            <span class="text-sm font-semibold">20:00 – 21:30 hs</span>
+          </div>
+          <a href="https://forms.gle/REEMPLAZAR-CORO" target="_blank" class="w-full py-4 bg-secondary-fixed text-on-secondary-fixed font-bold rounded-lg hover:bg-secondary-fixed-dim transition-colors flex justify-center items-center gap-2">
+            Unirse al Coro <span class="material-symbols-outlined text-lg">mic</span>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+  </section>
+
+  <!-- ═══ HORARIOS ═══ -->
+  <section id="horarios" class="bg-surface-container-low py-24">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+        <!-- Left col -->
+        <div class="lg:col-span-5">
+          <h2 class="text-5xl font-black tracking-tight mb-8">Horarios de Vida Litúrgica</h2>
+          <p class="text-on-surface-variant font-medium text-lg leading-relaxed mb-12">
+            Nuestra comunidad se reúne diariamente para celebrar la Eucaristía y compartir momentos de oración profunda. Te esperamos con el corazón abierto.
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-xl border-l-4 border-secondary shadow-sm">
+              <span class="material-symbols-outlined text-secondary">event_available</span>
+              <div>
+                <h4 class="font-bold text-lg mb-1">Misas de Domingo</h4>
+                <p class="text-on-surface-variant text-sm">08:00 | 11:00 | 19:30 hs</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-xl border-l-4 border-primary shadow-sm">
+              <span class="material-symbols-outlined text-primary">hourglass_empty</span>
+              <div>
+                <h4 class="font-bold text-lg mb-1">Confesiones</h4>
+                <p class="text-on-surface-variant text-sm">30 minutos antes de cada misa o con turno previo.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-xl border-l-4 border-tertiary shadow-sm">
+              <span class="material-symbols-outlined text-tertiary">baby_changing_station</span>
+              <div>
+                <h4 class="font-bold text-lg mb-1">Bautismos</h4>
+                <p class="text-on-surface-variant text-sm">Primer y tercer domingo del mes. Consultar en secretaría.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right col: weekly schedule -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-xl">
+            <div class="p-8 bg-surface-container-high border-b border-outline-variant/10 flex justify-between items-center">
+              <h3 class="text-xl font-bold">Calendario Semanal</h3>
+              <span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Lunes a Sábado</span>
+            </div>
+            <div class="divide-y divide-surface-container">
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-secondary font-bold text-sm block">LUNES A VIERNES</span>
+                  <span class="text-lg font-bold font-headline">Santa Misa</span>
+                </div>
+                <span class="text-2xl font-black tabular-nums">19:00</span>
+              </div>
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-primary font-bold text-sm block">JUEVES</span>
+                  <span class="text-lg font-bold font-headline">Adoración Eucarística</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-2xl font-black tabular-nums">18:00</span>
+                  <span class="block text-[10px] font-bold text-tertiary uppercase">Hora Santa</span>
+                </div>
+              </div>
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-secondary font-bold text-sm block">SÁBADOS</span>
+                  <span class="text-lg font-bold font-headline">Misa de Vísperas</span>
+                </div>
+                <span class="text-2xl font-black tabular-nums">19:30</span>
+              </div>
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-primary font-bold text-sm block">PRIMER VIERNES</span>
+                  <span class="text-lg font-bold font-headline">Misa Sagrado Corazón</span>
+                </div>
+                <span class="text-2xl font-black tabular-nums">08:00</span>
+              </div>
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-secondary font-bold text-sm block">MARTES</span>
+                  <span class="text-lg font-bold font-headline">Apoyo Escolar</span>
+                </div>
+                <span class="text-2xl font-black tabular-nums">17:30</span>
+              </div>
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-secondary font-bold text-sm block">MIÉRCOLES</span>
+                  <span class="text-lg font-bold font-headline">Cáritas</span>
+                </div>
+                <span class="text-2xl font-black tabular-nums">16:00</span>
+              </div>
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-primary font-bold text-sm block">JUEVES</span>
+                  <span class="text-lg font-bold font-headline">Coro Parroquial</span>
+                </div>
+                <span class="text-2xl font-black tabular-nums">20:00</span>
+              </div>
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-secondary font-bold text-sm block">VIERNES</span>
+                  <span class="text-lg font-bold font-headline">Confirmación</span>
+                </div>
+                <span class="text-2xl font-black tabular-nums">19:00</span>
+              </div>
+
+              <div class="p-6 flex items-center justify-between hover:bg-surface-bright transition-colors">
+                <div>
+                  <span class="text-secondary font-bold text-sm block">SÁBADOS</span>
+                  <span class="text-lg font-bold font-headline">Catequesis + Grupo Joven</span>
+                </div>
+                <span class="text-sm font-black tabular-nums text-right leading-tight">10:00 hs<br/><span class="text-secondary">17:00 hs</span></span>
+              </div>
+            </div>
+
+            <div class="p-6 bg-zinc-900 text-white flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary-fixed">notification_important</span>
+                <span class="text-xs font-medium">¿Cambios en los horarios por feriados?</span>
+              </div>
+              <a href="https://wa.me/5491100000000" target="_blank" class="text-xs font-black uppercase underline underline-offset-4 hover:text-secondary-fixed transition-colors whitespace-nowrap">
+                Consultar WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CANALES ═══ -->
+  <section id="canales" class="max-w-7xl mx-auto px-6 md:px-8 py-24 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span class="text-secondary font-bold tracking-widest text-xs uppercase mb-3 block">Comunidad</span>
+      <h2 class="text-4xl font-black tracking-tight mb-4">Seguinos y conectate</h2>
+      <p class="text-on-surface-variant mb-14 text-lg font-medium">
+        Estamos en varios canales para que puedas estar al tanto de todo lo que pasa en la parroquia.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5491100000000" target="_blank"
+           class="group flex flex-col items-center gap-5 p-8 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-[0_8px_32px_rgba(45,52,53,0.04)] hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm" style="background:#25D366">
+            <span class="material-symbols-outlined text-3xl text-white">chat</span>
+          </div>
+          <div>
+            <p class="font-black text-lg text-on-surface font-headline">WhatsApp</p>
+            <p class="text-on-surface-variant text-sm mt-1 leading-snug">Escribinos directamente para consultas y novedades</p>
+          </div>
+          <span class="mt-auto text-xs font-bold uppercase tracking-wider text-[#25D366] flex items-center gap-1">
+            Escribirnos <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/parroquiasantacruz" target="_blank"
+           class="group flex flex-col items-center gap-5 p-8 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-[0_8px_32px_rgba(45,52,53,0.04)] hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm" style="background: linear-gradient(135deg,#F58529,#DD2A7B,#8134AF)">
+            <span class="material-symbols-outlined text-3xl text-white">camera</span>
+          </div>
+          <div>
+            <p class="font-black text-lg text-on-surface font-headline">Instagram</p>
+            <p class="text-on-surface-variant text-sm mt-1 leading-snug">Fotos, anuncios y momentos de nuestra comunidad</p>
+          </div>
+          <span class="mt-auto text-xs font-bold uppercase tracking-wider flex items-center gap-1" style="color:#DD2A7B">
+            Seguirnos <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </span>
+        </a>
+
+        <!-- Canal de difusión -->
+        <a href="https://wa.me/5491100000000" target="_blank"
+           class="group flex flex-col items-center gap-5 p-8 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-[0_8px_32px_rgba(45,52,53,0.04)] hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm bg-secondary-container">
+            <span class="material-symbols-outlined text-3xl text-secondary">campaign</span>
+          </div>
+          <div>
+            <p class="font-black text-lg text-on-surface font-headline">Canal de Difusión</p>
+            <p class="text-on-surface-variant text-sm mt-1 leading-snug">Recibí avisos y recordatorios de la parroquia</p>
+          </div>
+          <span class="mt-auto text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1">
+            Suscribirse <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer id="contacto" class="w-full bg-zinc-50 border-t border-surface-container">
+  <div class="max-w-7xl mx-auto px-6 md:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+      <!-- Brand -->
+      <div class="col-span-1 lg:col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <img src="files/Frame 48.png" alt="Logo Parroquia Santa Cruz" class="h-12 w-auto"/>
+          <span class="text-2xl font-black text-zinc-900 uppercase tracking-tighter font-headline">Santa Cruz</span>
+        </div>
+        <p class="text-zinc-500 max-w-sm font-medium mb-2">Un lugar de encuentro, oración y servicio para toda la comunidad.</p>
+        <p class="text-zinc-400 text-sm mb-8">Dirección parroquial · Ciudad, Provincia</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://wa.me/5491100000000" target="_blank" class="flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-lg font-bold hover:opacity-90 transition-all shadow-sm text-sm">
+            <span class="material-symbols-outlined">chat</span> WhatsApp
+          </a>
+          <a href="#" class="flex items-center gap-2 bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white px-5 py-3 rounded-lg font-bold hover:opacity-90 transition-all shadow-sm text-sm">
+            <span class="material-symbols-outlined">camera</span> Instagram
+          </a>
+          <a href="mailto:parroquia@santacruz.org" class="flex items-center gap-2 bg-zinc-800 text-white px-5 py-3 rounded-lg font-bold hover:opacity-90 transition-all shadow-sm text-sm">
+            <span class="material-symbols-outlined">mail</span> Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <div>
+        <h4 class="font-bold text-zinc-900 mb-6 uppercase tracking-widest text-xs">Navegación</h4>
+        <ul class="space-y-4 text-sm font-medium text-zinc-500">
+          <li><a href="#grupos"   class="hover:text-secondary transition-colors">Grupos Parroquiales</a></li>
+          <li><a href="#horarios" class="hover:text-secondary transition-colors">Horarios de Misa</a></li>
+          <li><a href="#canales"  class="hover:text-secondary transition-colors">Seguinos</a></li>
+          <li><a href="#contacto" class="hover:text-secondary transition-colors">Secretaría</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h4 class="font-bold text-zinc-900 mb-6 uppercase tracking-widest text-xs">Legales</h4>
+        <ul class="space-y-4 text-sm font-medium text-zinc-500">
+          <li><a href="#" class="hover:text-secondary transition-colors">Política de Privacidad</a></li>
+          <li><a href="#" class="hover:text-secondary transition-colors">Términos de Uso</a></li>
+          <li><a href="#" class="hover:text-secondary transition-colors">Donaciones</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-zinc-400">© 2025 Parroquia Santa Cruz. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-2 text-xs font-bold text-zinc-400 uppercase tracking-widest">
+        Hecho con <span class="material-symbols-outlined text-tertiary text-sm">favorite</span> en comunidad
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+  // ── Hamburger menu ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburgerIcon.textContent = isOpen ? 'close' : 'menu';
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburgerIcon.textContent = 'menu';
+    });
+  });
+
+  // ── Active nav on scroll ──
+  const sections = document.querySelectorAll('section[id], footer[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove('nav-link-active', 'text-zinc-900', 'font-bold');
+          link.classList.add('text-zinc-500');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('nav-link-active', 'text-zinc-900', 'font-bold');
+            link.classList.remove('text-zinc-500');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+<!-- ═══ DESARROLLADO POR ═══ -->
+<div class="w-full bg-white border-t border-zinc-100 py-5 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3">
+    <!-- Foto + info -->
+    <div class="flex items-center gap-3">
+      <img
+        src="files/mauricio.jpg"
+        alt="Mauricio Medina"
+        class="w-9 h-9 rounded-full object-cover bg-zinc-100 ring-2 ring-zinc-200"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <!-- Fallback avatar con iniciales -->
+      <div class="w-9 h-9 rounded-full bg-zinc-900 text-white text-xs font-black flex items-center justify-center hidden" style="display:none">MM</div>
+      <p class="text-xs text-zinc-400 font-medium">
+        Desarrollado por <span class="text-zinc-600 font-bold">Mauricio Medina</span>
+      </p>
+    </div>
+    <!-- Botón Instagram -->
+    <a
+      href="https://www.instagram.com/mauri.h.m/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-1.5 text-xs font-bold text-zinc-400 hover:text-zinc-700 transition-colors"
+    >
+      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+      @mauri.h.m
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
