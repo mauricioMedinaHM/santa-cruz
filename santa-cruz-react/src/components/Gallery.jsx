@@ -4,11 +4,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 const images = [
-  { src: '/files/imgParroquia/virgenPuerta .jpg', title: 'Virgen en la Puerta',   caption: 'Nuestra Señora en la entrada' },
-  { src: '/files/imgParroquia/confirmacion.jpeg', title: 'Confirmación',          caption: 'Sacramento del Espíritu Santo' },
-  { src: '/files/imgParroquia/viacrusis.jpg',     title: 'Vía Crucis',            caption: 'El camino de la Cruz' },
-  { src: '/files/imgParroquia/jesusMuerto.jpg',   title: 'Cristo Yacente',        caption: 'La pasión de Nuestro Señor' },
-  { src: '/files/imgParroquia/juanPablpo.jpg',    title: 'San Juan Pablo II',     caption: 'El Papa peregrino' },
+  { src: '/files/imgParroquia/virgenPuerta .webp', title: 'Virgen en la Puerta',   caption: 'Nuestra Señora en la entrada' },
+  { src: '/files/imgParroquia/confirmacion.webp', title: 'Confirmación',          caption: 'Sacramento del Espíritu Santo' },
+  { src: '/files/imgParroquia/viacrusis.webp',     title: 'Vía Crucis',            caption: 'El camino de la Cruz' },
+  { src: '/files/imgParroquia/jesusMuerto.webp',   title: 'Cristo Yacente',        caption: 'La pasión de Nuestro Señor' },
+  { src: '/files/imgParroquia/juanPablpo.webp',    title: 'San Juan Pablo II',     caption: 'El Papa peregrino' },
 ]
 
 export default function Gallery() {

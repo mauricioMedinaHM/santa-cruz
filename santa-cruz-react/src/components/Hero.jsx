@@ -22,7 +22,7 @@ export default function Hero() {
       {/* Temple background photo */}
       <div style={{
         position:           'absolute', inset: 0,
-        backgroundImage:    'url(/files/imgParroquia/fotosTemplo.jpeg)',
+        backgroundImage:    'url(/files/imgParroquia/fotosTemplo.webp)',
         backgroundSize:     'cover',
         backgroundPosition: isMobile ? 'center center' : 'center 30%',
         backgroundRepeat:   'no-repeat',
@@ -166,7 +166,7 @@ export default function Hero() {
               boxShadow:    '0 32px 80px rgba(0,0,0,0.65)',
             }}>
               <img
-                src="/files/imgParroquia/virgenPuerta .jpg"
+                src="/files/imgParroquia/virgenPuerta .webp"
                 alt="Virgen en la puerta de la Parroquia Santa Cruz"
                 className="img-landscape"
                 style={{ filter: 'brightness(0.88) contrast(1.05)' }}

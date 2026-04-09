@@ -17,7 +17,7 @@ const groups = [
     CtaIcon: ArrowRight,
     href:    'https://forms.gle/REEMPLAZAR-CATEQUESIS',
     accent:  '#c8a84b',
-    photo:   '/files/imgParroquia/fotosTemplo.jpeg',
+    photo:   '/files/imgParroquia/fotosTemplo.webp',
   },
   {
     Icon:    Sparkles,
@@ -29,7 +29,7 @@ const groups = [
     CtaIcon: ExternalLink,
     href:    'https://forms.gle/REEMPLAZAR-CONFIRMACION',
     accent:  '#c8a84b',
-    photo:   '/files/imgParroquia/confirmacion.jpeg',
+    photo:   '/files/imgParroquia/confirmacion.webp',
   },
   {
     Icon:    Users,
@@ -42,7 +42,7 @@ const groups = [
     href:    'https://forms.gle/REEMPLAZAR-GRUPOJOVEN',
     accent:  '#8b1a2a',
     badge:   'Cupos Limitados',
-    photo:   '/files/imgParroquia/juanPablpo.jpg',
+    photo:   '/files/imgParroquia/juanPablpo.webp',
   },
   {
     Icon:    GraduationCap,
@@ -54,7 +54,7 @@ const groups = [
     CtaIcon: ArrowRight,
     href:    'https://forms.gle/REEMPLAZAR-APOYOESCOLAR',
     accent:  '#2e7d32',
-    photo:   '/files/imgParroquia/viacrusis.jpg',
+    photo:   '/files/imgParroquia/viacrusis.webp',
   },
   {
     Icon:    HeartHandshake,
@@ -66,7 +66,7 @@ const groups = [
     CtaIcon: ArrowRight,
     href:    'https://forms.gle/REEMPLAZAR-CARITAS',
     accent:  '#2e7d32',
-    photo:   '/files/imgParroquia/jesusMuerto.jpg',
+    photo:   '/files/imgParroquia/jesusMuerto.webp',
   },
   {
     Icon:    Music,
@@ -78,7 +78,7 @@ const groups = [
     CtaIcon: ArrowRight,
     href:    'https://forms.gle/REEMPLAZAR-CORO',
     accent:  '#c8a84b',
-    photo:   '/files/imgParroquia/virgenPuerta .jpg',
+    photo:   '/files/imgParroquia/virgenPuerta .webp',
   },
 ]
 
