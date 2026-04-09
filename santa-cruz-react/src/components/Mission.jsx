@@ -1,5 +1,6 @@
 import { motion } from 'motion/react'
 import { Cross, BookOpen, Heart, Users, Globe, Flame } from 'lucide-react'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const pillars = [
   {
@@ -35,6 +36,7 @@ const pillars = [
 ]
 
 export default function Mission() {
+  const isMobile = useIsMobile()
   return (
     <section style={{
       padding:    '7rem 0',
@@ -49,7 +51,7 @@ export default function Mission() {
         background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(200,168,75,0.07) 0%, transparent 70%)',
       }} />
 
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: isMobile ? '0 1.25rem' : '0 2rem', position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
         <motion.div
@@ -89,9 +91,9 @@ export default function Mission() {
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: '1.5rem',
-            marginBottom: '4rem',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '1rem',
+            marginBottom: '3rem',
           }}
         >
           {pillars.map(p => {

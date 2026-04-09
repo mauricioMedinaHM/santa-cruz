@@ -1,5 +1,6 @@
 import { motion } from 'motion/react'
 import { ArrowRight } from 'lucide-react'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 /* ── WhatsApp SVG ── */
 const WhatsAppIcon = () => (
@@ -53,9 +54,10 @@ const channels = [
 ]
 
 export default function Channels() {
+  const isMobile = useIsMobile()
   return (
-    <section id="canales" style={{ padding: '7rem 0', background: '#f0e8d6' }}>
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
+    <section id="canales" style={{ padding: isMobile ? '4rem 0' : '7rem 0', background: '#f0e8d6' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: isMobile ? '0 1.25rem' : '0 2rem' }}>
 
         {/* Header */}
         <motion.div
@@ -92,8 +94,8 @@ export default function Channels() {
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.13 } } }}
           style={{
             display:             'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap:                 '1.5rem',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap:                 '1.25rem',
             maxWidth:            '900px',
             margin:              '0 auto',
           }}

@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const navLinks = [
   ['#galeria',  'Galería'],
@@ -11,6 +12,7 @@ const navLinks = [
 const legalLinks = ['Política de Privacidad', 'Términos de Uso', 'Donaciones']
 
 export default function Footer() {
+  const isMobile = useIsMobile()
   return (
     <footer
       id="contacto"
@@ -19,7 +21,7 @@ export default function Footer() {
         borderTop:   '1px solid rgba(200,168,75,0.14)',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '5rem 2rem 2.5rem' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: isMobile ? '3rem 1.25rem 2rem' : '5rem 2rem 2.5rem' }}>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -28,13 +30,13 @@ export default function Footer() {
           transition={{ duration: 0.7 }}
           style={{
             display:             'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap:                 '3rem',
-            marginBottom:        '3rem',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(180px, 1fr))',
+            gap:                 isMobile ? '2rem' : '3rem',
+            marginBottom:        '2.5rem',
           }}
         >
-          {/* Brand — takes more space */}
-          <div style={{ gridColumn: 'span 2' }}>
+          {/* Brand */}
+          <div style={{ gridColumn: isMobile ? 'span 1' : 'span 2' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <img src="/files/Frame 48.png" alt="Santa Cruz" style={{ height: '44px', width: 'auto' }} />
               <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
