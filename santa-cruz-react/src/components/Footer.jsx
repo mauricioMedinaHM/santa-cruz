@@ -63,13 +63,18 @@ export default function Footer() {
               background:'rgba(200,168,75,0.06)',
               border:'1px solid rgba(200,168,75,0.22)',
             }}>
-              <div style={{
-                width:'42px', height:'42px', borderRadius:'50%', flexShrink:0,
-                background:'linear-gradient(135deg, #c8a84b, #9a7a2e)',
-                display:'flex', alignItems:'center', justifyContent:'center',
-                fontSize:'0.78rem', fontWeight:900, color:'#1a1208',
-                letterSpacing:'0.05em',
-              }}>MM</div>
+              <img
+                src="https://unavatar.io/instagram/mauri.h.m"
+                alt="Mauricio Medina"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                style={{
+                  width:'48px', height:'48px', borderRadius:'50%', flexShrink:0,
+                  objectFit:'cover',
+                  border:'2px solid rgba(200,168,75,0.45)',
+                  background:'linear-gradient(135deg, #c8a84b, #9a7a2e)',
+                }}
+              />
               <div style={{ display:'flex', flexDirection:'column', gap:'0.15rem', lineHeight:1.3 }}>
                 <span style={{ fontSize:'0.68rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.16em', color:'#c8a84b' }}>
                   Desarrollado por
