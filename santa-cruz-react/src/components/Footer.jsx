@@ -64,15 +64,13 @@ export default function Footer() {
               border:'1px solid rgba(200,168,75,0.22)',
             }}>
               <img
-                src="https://unavatar.io/instagram/mauri.h.m"
+                src="/files/iconoMauri.jpeg"
                 alt="Mauricio Medina"
                 loading="lazy"
-                referrerPolicy="no-referrer"
                 style={{
                   width:'48px', height:'48px', borderRadius:'50%', flexShrink:0,
                   objectFit:'cover',
                   border:'2px solid rgba(200,168,75,0.45)',
-                  background:'linear-gradient(135deg, #c8a84b, #9a7a2e)',
                 }}
               />
               <div style={{ display:'flex', flexDirection:'column', gap:'0.15rem', lineHeight:1.3 }}>
