@@ -53,9 +53,9 @@ export default function Nav() {
         {/* Logo */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none', flexShrink: 0 }}>
           <img
-            src="/files/Frame 48.png"
+            src="/files/Frame 47.png"
             alt="Santa Cruz"
-            style={{ height: isMobile ? '34px' : '40px', width: 'auto', filter: 'brightness(0) invert(1)' }}
+            style={{ height: isMobile ? '34px' : '40px', width: 'auto' }}
           />
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
             <span style={{
